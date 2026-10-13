@@ -1,0 +1,1170 @@
+/* Veebilehe põhikujundus */
+* {
+    box-sizing: border-box;
+}
+
+/* Sujuv kerimine lehe osade vahel */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f5ed;
+    color: #253b30;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Päis */
+header {
+    background-color: #244b3b;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.pais {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 70px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 45px;
+    height: auto;
+    display: block;
+}
+
+/* Päise ikoonid */
+.pais-ikoonid {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.pais-ikoonid .bi {
+    font-size: 25px;
+    color: white;
+}
+
+.menuu-ikoon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Peidame checkboxi */
+#menuu-nupp {
+    display: none;
+}
+
+/* Avatav menüü */
+.menuu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 70px);
+    overflow-y: auto;
+    background-color: #f8f5ed;
+    padding: 15px 20px 25px;
+    z-index: 100;
+}
+
+/* Menüü avaneb checkboxi valimisel */
+#menuu-nupp:checked ~ .menuu {
+    display: block;
+}
+
+.menuu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1160px;
+}
+
+.menuu li {
+    border-bottom: 1px solid #ddd8ce;
+}
+
+.menuu li:last-child {
+    border-bottom: none;
+}
+
+.menuu a {
+    display: block;
+    color: #244b3b;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 18px 5px;
+}
+
+.menuu a:hover {
+    color: #719477;
+    background-color: #eeebe2;
+}
+
+.menuu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menüüikooni vahetumine */
+.menuu-suletud {
+    display: none;
+}
+
+#menuu-nupp:checked ~ .pais .menuu-avatud {
+    display: none;
+}
+
+#menuu-nupp:checked ~ .pais .menuu-suletud {
+    display: inline;
+}
+
+/* Avalehe bänner */
+.avalehe-banner {
+    position: relative;
+    width: calc(100% - 30px);
+    height: 240px;
+    margin: 15px auto 0;
+    overflow: hidden;
+    background-color: #627866;
+    border-radius: 8px;
+}
+
+.avalehe-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tekst bänneri peal */
+.avalehe-banner h1 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+    line-height: 1.3;
+    font-weight: bold;
+    text-shadow: 1px 2px 5px #333333;
+}
+
+/* Populaarsed retseptid */
+.populaarsed {
+    padding: 30px 15px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.populaarsed h2 {
+    font-size: 21px;
+    text-align: center;
+    color: #244b3b;
+    margin: 0 0 25px;
+    font-weight: bold;
+}
+
+/* Kaks retsepti kõrvuti */
+.retseptid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* Ühe retsepti kaart */
+.retsepti-kaart {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    box-shadow: 0 2px 7px #00000015;
+}
+
+.retsepti-kaart img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Retsepti nimi */
+.retsepti-kaart h3 {
+    font-size: 16px;
+    color: #244b3b;
+    margin: 13px 10px 5px;
+    line-height: 1.3;
+}
+
+/* Kategooria */
+.kategooria {
+    font-size: 13px;
+    color: #777777;
+    margin: 0 10px 10px;
+}
+
+/* Aeg ja hind */
+.retsepti-info {
+    font-size: 12px;
+    color: #333333;
+    margin: 0 10px 15px;
+}
+
+/* Retsepti avamise nupp */
+.retsepti-nupp {
+    display: block;
+    background-color: #81b37e;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    padding: 11px 5px;
+    margin: auto 10px 0;
+    border-radius: 30px;
+}
+
+.retsepti-nupp:hover {
+    background-color: #3c7055;
+}
+
+/* Väiksemad telefonid */
+@media only screen and (max-width: 360px) {
+
+    .pais {
+        padding: 10px 12px;
+    }
+
+    .pais-ikoonid {
+        gap: 15px;
+    }
+
+    .pais-ikoonid .bi {
+        font-size: 22px;
+    }
+
+    .avalehe-banner h1 {
+        font-size: 23px;
+    }
+
+    .populaarsed {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .retseptid {
+        gap: 8px;
+    }
+
+    .retsepti-kaart h3 {
+        font-size: 14px;
+    }
+
+    .retsepti-info {
+        font-size: 11px;
+    }
+
+    .retsepti-nupp {
+        font-size: 12px;
+    }
+}
+
+/* Tahvelarvutid (alates 600px) */
+@media only screen and (min-width: 600px) {
+
+    .pais {
+        padding: 15px 35px;
+    }
+
+    .logo img {
+        width: 55px;
+    }
+
+    .pais-ikoonid {
+        gap: 30px;
+    }
+
+    .pais-ikoonid .bi {
+        font-size: 28px;
+    }
+
+    .avalehe-banner {
+        width: calc(100% - 70px);
+        height: 350px;
+        margin-top: 25px;
+    }
+
+    .avalehe-banner h1 {
+        font-size: 40px;
+        max-width: 650px;
+        top: 80%;
+    }
+
+    .populaarsed {
+        padding: 45px 35px 70px;
+    }
+
+    .populaarsed h2 {
+        font-size: 27px;
+        margin-bottom: 35px;
+    }
+
+    .retseptid {
+        gap: 25px;
+    }
+
+    .retsepti-kaart img {
+        height: 210px;
+    }
+
+    .retsepti-kaart h3 {
+        font-size: 21px;
+        margin: 18px 18px 8px;
+    }
+
+    .kategooria {
+        font-size: 15px;
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+    .retsepti-info {
+        font-size: 15px;
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+    .retsepti-nupp {
+        font-size: 15px;
+        padding: 13px;
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+}
+
+/* Arvutid (alates 950px) */
+@media only screen and (min-width: 950px) {
+
+    .pais {
+        min-height: 85px;
+        padding: 15px 40px;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .pais-ikoonid {
+        gap: 35px;
+    }
+
+    .avalehe-banner {
+        width: calc(100% - 80px);
+        max-width: 1200px;
+        height: 460px;
+        margin-top: 30px;
+    }
+
+    .avalehe-banner h1 {
+        font-size: 52px;
+        max-width: 800px;
+        top: 80%;
+    }
+
+    .populaarsed {
+        padding: 60px 40px 90px;
+    }
+
+    .populaarsed h2 {
+        font-size: 32px;
+        margin-bottom: 45px;
+    }
+
+    .retseptid {
+        max-width: 900px;
+        margin: 0 auto;
+        gap: 35px;
+    }
+
+    .retsepti-kaart img {
+        height: 260px;
+    }
+
+    .retsepti-kaart h3 {
+        font-size: 24px;
+    }
+
+    .retsepti-nupp {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .menuu {
+        top: 85px;
+        height: calc(100dvh - 85px);
+        padding: 25px 40px 35px;
+    }
+
+    .menuu a {
+        font-size: 20px;
+        padding: 20px 10px;
+    }
+}
+
+/* Pastade leht */
+
+/* Kogu lehe sisu */
+.pastade-leht {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 15px 50px;
+}
+
+/* Pealkiri ja filtriikoon */
+.kategooria-pais {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.kategooria-pais h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #244b3b;
+}
+
+/* Filtreerimise nupp */
+.filtri-nupp {
+    background: none;
+    border: none;
+    color: #244b3b;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.filtri-nupp:hover {
+    color: #719477;
+}
+
+/* Pastade leht tahvelarvutis */
+@media only screen and (min-width: 600px) {
+
+    .pastade-leht {
+        padding: 40px 35px 70px;
+    }
+
+    .kategooria-pais {
+        margin-bottom: 35px;
+    }
+
+    .kategooria-pais h1 {
+        font-size: 32px;
+    }
+
+    .filtri-nupp {
+        font-size: 28px;
+    }
+}
+
+/* Pastade leht arvutis */
+@media only screen and (min-width: 950px) {
+
+    .pastade-leht {
+        padding: 50px 40px 90px;
+    }
+
+    .kategooria-pais h1 {
+        font-size: 36px;
+    }
+
+    /* Neli retseptikaarti kõrvuti */
+    .pastade-leht .retseptid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        max-width: none;
+        gap: 20px;
+    }
+
+    .pastade-leht .retsepti-kaart img {
+        height: 180px;
+    }
+
+    .pastade-leht .retsepti-kaart h3 {
+        font-size: 19px;
+    }
+
+    .pastade-leht .retsepti-nupp {
+        font-size: 14px;
+    }
+}
+
+
+/* Pastade filtrivaade*/
+
+/* Peidame filtrivaate checkboxi */
+#filtri-olek {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+/* Filtriikoon on vajutatav */
+.filtri-nupp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Avatav filtrivaade */
+.filtri-paneel {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 70px);
+    background-color: #f8f5ed;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 90;
+}
+
+/* Näitame filtrit, kui checkbox on märgitud */
+#filtri-olek:checked ~ .filtri-paneel {
+    display: block;
+}
+
+/* Filtrivaate sisemine paigutus */
+.filtri-sisu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 15px 60px;
+}
+
+/* Filtrivaate pealkiri */
+.filtri-sisu .kategooria-pais {
+    margin-bottom: 35px;
+}
+
+/* Üks filtri osa */
+.filtri-grupp {
+    margin-bottom: 35px;
+}
+
+.filtri-grupp h2 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #111111;
+    margin: 0 0 20px;
+}
+
+/* Liuguri ja otspunktide paigutus */
+.vahemiku-rida {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vahemiku-rida span {
+    font-size: 11px;
+    color: #555555;
+    white-space: nowrap;
+}
+
+/* Kahe liuguri ühine ala */
+.vahemiku-liugurid {
+    position: relative;
+    flex: 1;
+    height: 22px;
+    margin: 0 2px;
+    display: flex;
+    align-items: center;
+}
+
+/* Hall ja sinine joon liugurite taga */
+.vahemiku-liugurid::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+
+    background: linear-gradient(
+        to right,
+        #999999 0%,
+        #999999 var(--algus),
+        #689bc5 var(--algus),
+        #689bc5 var(--lopp),
+        #999999 var(--lopp),
+        #999999 100%
+    );
+}
+
+/* Kaks kattuvat liugurit */
+.vahemiku-liugurid input[type="range"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    margin: 0;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+/* Liuguri ümmargune nupp Chrome'is */
+.vahemiku-liugurid input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: none;
+    background-color: #689bc5;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* Liuguri nupp Firefoxis */
+.vahemiku-liugurid input[type="range"]::-moz-range-thumb {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: none;
+    background-color: #689bc5;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* Lihaga ja lihata valikud */
+.filtri-valikud {
+    margin-top: 10px;
+}
+
+.filtri-valik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    color: #111111;
+}
+
+/* Märkeruudud */
+.filtri-valik input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #999999;
+    border-radius: 7px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Valitud märkeruut */
+.filtri-valik input:checked {
+    background-color: #244b3b;
+    border-color: #244b3b;
+}
+
+/* Linnuke valitud märkeruudus */
+.filtri-valik input:checked::after {
+    content: "✓";
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+/* Filtrivaade tahvelarvutis */
+@media only screen and (min-width: 600px) {
+
+    .filtri-paneel {
+        top: 85px;
+        height: calc(100dvh - 85px);
+    }
+
+    .filtri-sisu {
+        padding: 40px 35px 70px;
+    }
+
+    .filtri-grupp {
+        max-width: 500px;
+        margin-bottom: 45px;
+    }
+
+    .filtri-grupp h2,
+    .filtri-valik {
+        font-size: 18px;
+    }
+
+    .filtri-valikud {
+        max-width: 500px;
+    }
+}
+
+/* Filtrivaade arvutis*/
+@media only screen and (min-width: 950px) {
+
+    .filtri-paneel {
+        top: 90px;
+        height: calc(100dvh - 90px);
+    }
+
+    .filtri-sisu {
+        padding: 50px 40px 90px;
+    }
+}
+
+/* Retseptileht */
+
+.retsepti-leht {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 15px 60px;
+}
+
+/* Ostunimekiri */
+.ostunimekirja-konteiner, .lemmikute-konteiner {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.loendur-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #d88943; 
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 50%;
+    min-width: 16px;
+    text-align: center;
+    display: none; /* Vaikimisi peidetud, kui midagi pole lisatud */
+}
+
+/* Retsepti pilt ja põhiandmed */
+.retsepti-tutvustus {
+    display: grid;
+    grid-template-columns: 42% minmax(0, 1fr);
+    gap: 15px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.carbonara-pilt {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Retsepti nimi ja info */
+.retsepti-andmed {
+    padding-bottom: 0;
+}
+
+.retsepti-andmed h1 {
+    color: #244b3b;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0 0 15px;
+}
+
+.retsepti-andmed p {
+    font-size: 13px;
+    margin: 0 0 12px;
+    color: #333333;
+}
+
+.retsepti-andmed p .bi {
+    color: #244b3b;
+    margin-right: 6px;
+}
+
+.retsepti-andmed .retsepti-kirjeldus {
+    font-size: 12px;
+    color: #777777;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Lemmikute ikoon */
+.lemmiku-ikoon {
+    display: block;
+    margin: 25px 0 0 auto;
+    padding: 5px;
+    background: none;
+    border: none;
+    color: #244b3b;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.lemmiku-ikoon:hover {
+    color: #719477;
+}
+
+/* Valmistamisjuhised */
+.valmistamine {
+    margin-bottom: 45px;
+}
+
+.valmistamine h2,
+.koostisosad h2 {
+    font-size: 24px;
+    color: #244b3b;
+    margin: 0 0 20px;
+}
+
+/* Valmistamisjuhiste sammud*/
+.valmistamise-samm {
+    margin-bottom: 25px;
+}
+
+.valmistamise-samm h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #253b30;
+    margin: 0 0 10px;
+}
+
+.valmistamise-samm p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #253b30;
+    margin: 0;
+}
+
+/* Oranž koostisosade nupp */
+.koostisosade-nupp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: fit-content;
+    margin: 20px auto 35px;
+    padding: 13px 25px;
+
+    background-color: #d88943;
+    color: white;
+    border-radius: 7px;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.koostisosade-nupp:hover {
+    background-color: #bb7133;
+}
+
+/* Koostisosad */
+.koostisosad {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    scroll-margin-top: 90px;
+}
+
+/* Portsjonite valik */
+.portsjonid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.portsjonite-valik {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.portsjonite-valik button {
+    background-color: #244b3b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Koostisosade nimekiri */
+.koostisosade-loend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.koostisosade-loend li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e1da;
+    font-size: 15px;
+}
+
+.koostisosade-loend li:last-child {
+    border-bottom: none;
+}
+
+/* Koostisosa lisamise nupp */
+.koostisosade-loend button {
+    background: none;
+    border: none;
+    color: #244b3b;
+    font-size: 23px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.koostisosade-loend button:hover {
+    color: #719477;
+}
+
+/* Retseptilehe pealkirjad */
+
+/* Juhised ja koostisosade nupp kõrvuti */
+.valmistamise-pais {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.valmistamise-pais h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Koostisosade juurde viiv nupp */
+.valmistamise-pais .koostisosade-nupp {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+    border-radius: 25px;
+}
+
+/* Koostisosad ja lemmikute nupp kõrvuti */
+.koostisosade-pais {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.koostisosade-pais h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Lemmikute nupp */
+.koostisosade-pais .lemmiku-ikoon {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #244b3b;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.koostisosade-pais .lemmiku-ikoon .bi {
+    font-size: 21px;
+}
+
+.koostisosade-pais .lemmiku-ikoon span {
+    font-size: 11px;
+    color: #333333;
+    font-weight: normal;
+}
+
+.koostisosade-loend button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.koostisosade-loend button .bi {
+    font-size: 14px;
+}
+
+.koostisosade-loend button span {
+    color: #666666;
+}
+
+/* Pealkirjade kohandamine suurematel ekraanidel */
+@media only screen and (min-width: 600px) {
+
+    .valmistamise-pais h2,
+    .koostisosade-pais h2 {
+        font-size: 28px;
+    }
+
+    .valmistamise-pais .koostisosade-nupp {
+        font-size: 15px;
+        padding: 11px 18px;
+    }
+
+    .koostisosade-pais .lemmiku-ikoon span {
+        font-size: 14px;
+    }
+}
+
+/* Retseptileht tahvelarvutis*/
+@media only screen and (min-width: 600px) {
+
+    .retsepti-leht {
+        padding: 40px 35px 80px;
+    }
+
+    .retsepti-tutvustus {
+        grid-template-columns: 40% minmax(0, 1fr);
+        gap: 30px;
+        margin-bottom: 45px;
+    }
+
+    .carbonara-pilt {
+        height: 280px;
+    }
+
+    .retsepti-andmed h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .retsepti-andmed p {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .valmistamine h2,
+    .koostisosad h2 {
+        font-size: 30px;
+    }
+
+    .valmistamise-samm h3 {
+        font-size: 19px;
+    }
+
+    .valmistamise-samm p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .koostisosad {
+        scroll-margin-top: 110px;
+    }
+
+    .koostisosade-loend li {
+        font-size: 17px;
+    }
+}
+
+
+/* Retseptileht arvutis */
+@media only screen and (min-width: 950px) {
+
+    .retsepti-leht {
+        padding: 50px 40px 100px;
+    }
+
+    .retsepti-tutvustus {
+        gap: 45px;
+    }
+
+    .carbonara-pilt {
+        height: 350px;
+    }
+
+    .retsepti-andmed h1 {
+        font-size: 40px;
+    }
+
+    .valmistamine,
+    .koostisosad {
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .valmistamise-samm h3 {
+        font-size: 21px;
+    }
+
+    .valmistamise-samm p {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .koostisosad {
+        scroll-margin-top: 115px;
+    }
+}

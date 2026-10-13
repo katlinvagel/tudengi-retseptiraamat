@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasta Carbonara - Parimad retseptid tudengile</title>
+    <!-- Bootstrap ikoonid -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Meie CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Päis -->
+    <header>
+        <!-- Menüü avamise checkbox -->
+        <input type="checkbox" id="menuu-nupp">
+
+        <div class="pais">
+            <!-- Logo -->
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="Veebilehe logo"></a>
+            <!-- Päise ikoonid -->
+            <div class="pais-ikoonid">
+                <!-- Lemmikud -->
+                <div class="lemmikute-konteiner">
+                    <i class="bi bi-star"></i>
+                    <span id="lemmiku-loendur" class="loendur-badge">0</span>
+                </div>
+                <!-- Ostunimekiri -->
+                <div class="ostunimekirja-konteiner">
+                    <i class="bi bi-clipboard-check"></i>
+                    <span id="ostu-loendur" class="loendur-badge">0</span>
+                 </div>
+                <!-- Hamburgerimenüü -->
+                <label for="menuu-nupp" class="menuu-ikoon">
+                    <i class="bi bi-list menuu-avatud"></i>
+                    <i class="bi bi-x-lg menuu-suletud"></i>
+                </label>
+            </div>
+        </div>
+
+        <!-- Avatav menüü -->
+        <nav class="menuu">
+            <ul>
+                <li><a href="#">Hommikus&ouml;&ouml;k<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Salat<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Supp<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="pastad.html">Pasta<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Praed<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Magustoit<i class="bi bi-chevron-right"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Lehe põhisisu -->
+    <main class="retsepti-leht">
+        <!-- Retsepti tutvustus -->
+        <section class="retsepti-tutvustus">
+            <img src="img/carbonara.jpg" alt="Pasta Carbonara" class="carbonara-pilt">
+            <div class="retsepti-andmed">
+                <h1>Pasta Carbonara</h1>
+                <p>Proovi seda maitsvat ja kiiresti valmivat pastat</p>
+                <p><i class="bi bi-clock"></i>Prep: 10 min &vert; Cook: 10 min</p>
+                <p><i class="bi bi-currency-euro"></i><span id="hind-portsjoni-kohta">2.80</span> &euro; portsjoni kohta</p>
+            </div>
+        </section>
+
+        <!-- Valmistamisjuhised -->
+        <section class="valmistamine">
+
+            <div class="valmistamise-pais">
+                <h2>Juhised</h2>
+                <a href="#koostisosad" class="koostisosade-nupp">Koostisosad<i class="bi bi-arrow-down"></i></a>
+            </div>
+
+            <!-- Esimene samm -->
+            <div class="valmistamise-samm">
+                <h3>Esimene samm</h3>
+                <p>Pane suur pott soolaga maitsestatud vett keema. Lisa spagetid ja keeda vastavalt pakendil olevale
+                    juhisele, kuni pasta on <i>al dente</i>. Samal ajal lõika peekon väikesteks tükkideks ning prae pannil
+                    kuldseks. Sega kausis munad ja riivitud juust.</p>
+            </div>
+
+            <!-- Teine samm -->
+            <div class="valmistamise-samm">
+                <h3>Teine samm</h3>
+                <p>Kui pasta on keedetud, jäta veidi keeduvett alles ja kurna ülejäänu. Lisa pasta pannile peekoni juurde
+                    ning tõsta pann tulelt. Sega pasta hulka muna-juustusegu ja vajadusel lisa veidi pastakeeduvett, et kaste
+                    muutuks kreemjaks. Maitsesta musta pipraga ning serveeri kohe koos riivitud juustuga.</p>
+            </div>
+        </section>
+
+        <!-- Koostisosad -->
+        <section class="koostisosad" id="koostisosad">
+
+            <div class="koostisosade-pais">
+                <h2>Koostisosad</h2>
+                <button type="button" class="lemmiku-ikoon" id="lemmiku-lisamise-nupp">
+                    <i class="bi bi-star"></i>
+                    <span>Lisa lemmikute hulka</span>
+                </button>
+            </div>
+
+            <!-- Portsjonite arv-->
+            <div class="portsjonid">
+                <span>Portsjonite arv</span>
+                <div class="portsjonite-valik">
+                    <button type="button" id="vahenda-nupp" aria-label="Vähenda portsjoneid"><i class="bi bi-dash"></i></button>
+                    <span id="portsjonite-arv">2</span>
+                    <button type="button" id="suurenda-nupp" aria-label="Suurenda portsjoneid"><i class="bi bi-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- Koostisosade nimekiri -->
+            <ul class="koostisosade-loend">
+                <li>
+                    <span class="koostisosa-tekst"><strong data-kogus="100">100</strong> g spagette</span>
+                    <button type="button" class="lisa-nimekirja-btn"><i class="bi bi-plus-circle-fill"></i><span>Lisa nimekirja</span></button>
+                </li>
+                <li>
+                    <span class="koostisosa-tekst"><strong data-kogus="50">50</strong> g peekonit</span>
+                    <button type="button" class="lisa-nimekirja-btn"><i class="bi bi-plus-circle-fill"></i><span>Lisa nimekirja</span></button>
+                </li>
+                <li>
+                    <span class="koostisosa-tekst"><strong data-kogus="1">1</strong> toasooja muna</span>
+                    <button type="button" class="lisa-nimekirja-btn"><i class="bi bi-plus-circle-fill"></i><span>Lisa nimekirja</span></button>
+                </li>
+                <li>
+                    <span class="koostisosa-tekst"><strong data-kogus="25">25</strong> g riivitud parmesani</span>
+                    <button type="button" class="lisa-nimekirja-btn"><i class="bi bi-plus-circle-fill"></i><span>Lisa nimekirja</span></button>
+                </li>
+                <li>
+                    <span>Must pipar</span>
+                    <button type="button" class="lisa-nimekirja-btn"><i class="bi bi-plus-circle-fill"></i><span>Lisa nimekirja</span></button>
+                </li>
+                <li>
+                    <span>Sool</span>
+                    <button type="button" class="lisa-nimekirja-btn"><i class="bi bi-plus-circle-fill"></i><span>Lisa nimekirja</span></button>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const vahendaNupp = document.getElementById('vahenda-nupp');
+        const suurendaNupp = document.getElementById('suurenda-nupp');
+        const portsjoniteEkraan = document.getElementById('portsjonite-arv');
+        const koguseElemendid = document.querySelectorAll('[data-kogus]');
+
+        let portsjonid = 2; // Baasportsjonite arv HTML-is (2 portsjonit)
+        const baasPortsjonid = 2;
+
+        function uuendaKoguseid() {
+            portsjoniteEkraan.textContent = portsjonid;
+            
+            koguseElemendid.forEach(element => {
+                const baasKogus = parseFloat(element.getAttribute('data-kogus'));
+                // Arvutab uue koguse vastavalt portsjonitele ja ümardab vajadusel
+                const uusKogus = (baasKogus / baasPortsjonid) * portsjonid;
+                element.textContent = uusKogus % 1 !== 0 ? uusKogus.toFixed(1) : uusKogus;
+            });
+        }
+
+        suurendaNupp.addEventListener('click', () => {
+            if (portsjonid < 20) { // Ülemine piir näiteks 20 portsjonit
+                portsjonid++;
+                uuendaKoguseid();
+            }
+        });
+
+        vahendaNupp.addEventListener('click', () => {
+            if (portsjonid > 1) { // Alumine piir on 1 portsjon
+                portsjonid--;
+                uuendaKoguseid();
+            }
+        });
+
+    // Ostunimekirja loogika
+    const lisaNupud = document.querySelectorAll('.lisa-nimekirja-btn');
+    const ostuLoendur = document.getElementById('ostu-loendur');
+    let nimekirjaArv = 0;
+
+    lisaNupud.forEach(nupp => {
+        nupp.addEventListener('click', () => {
+            // Kontrollime, kas nupp on juba lisatud (näiteks visuaalse muudatuse jaoks)
+            if (!nupp.classList.contains('lisatud')) {
+                nupp.classList.add('lisatud');
+                nupp.querySelector('span').textContent = 'Lisatud';
+                nupp.querySelector('i').className = 'bi bi-check-circle-fill';
+                
+                // Suurendame arvu ja uuendame badge'i
+                nimekirjaArv++;
+                ostuLoendur.textContent = nimekirjaArv;
+                ostuLoendur.style.display = 'inline-block'; // Muudame nähtavaks
+            } else {
+                // Kui vajutatakse uuesti, võib soovi korral eemaldada
+                nupp.classList.remove('lisatud');
+                nupp.querySelector('span').textContent = 'Lisa nimekirja';
+                nupp.querySelector('i').className = 'bi bi-plus-circle-fill';
+                
+                nimekirjaArv--;
+                ostuLoendur.textContent = nimekirjaArv;
+                if (nimekirjaArv === 0) {
+                    ostuLoendur.style.display = 'none'; // Peidame, kui arv on 0
+                }
+            }
+        });
+    });
+
+    // Lemmikute nupu loogika
+    const lemmikuNupp = document.getElementById('lemmiku-lisamise-nupp');
+    const lemmikuLoendur = document.getElementById('lemmiku-loendur');
+    let lemmikuteArv = 0;
+
+    if (lemmikuNupp) {
+        lemmikuNupp.addEventListener('click', () => {
+            const nuputekst = lemmikuNupp.querySelector('span');
+
+            if (!lemmikuNupp.classList.contains('lisatud')) {
+                lemmikuNupp.classList.add('lisatud');
+                nuputekst.textContent = 'Lisatud lemmikutesse';
+                // Ikooni klassi ei muudeta, jääb samaks
+                
+                lemmikuteArv++;
+                lemmikuLoendur.textContent = lemmikuteArv;
+                lemmikuLoendur.style.display = 'inline-block';
+            } else {
+                lemmikuNupp.classList.remove('lisatud');
+                nuputekst.textContent = 'Lisa lemmikute hulka';
+                // Ikooni klassi ei muudeta, jääb samaks
+                
+                lemmikuteArv--;
+                lemmikuLoendur.textContent = lemmikuteArv;
+                if (lemmikuteArv === 0) {
+                    lemmikuLoendur.style.display = 'none';
+                }
+            }
+        });
+    }
+    </script>
+
+</body>
+
+</html>

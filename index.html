@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudengi retseptiraamat</title>
+    <!-- Bootstrap ikoonid -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Meie CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Päis -->
+    <header>
+        <!-- Menüü avamise checkbox -->
+        <input type="checkbox" id="menuu-nupp">
+
+        <div class="pais">
+            <!-- Logo -->
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="Veebilehe logo"></a>
+            <!-- Päise ikoonid -->
+            <div class="pais-ikoonid">
+                <!-- Lemmikud -->
+                <i class="bi bi-star"></i>
+                <!-- Ostunimekiri -->
+                <i class="bi bi-clipboard-check"></i>
+                <!-- Hamburgerimenüü -->
+                <label for="menuu-nupp" class="menuu-ikoon">
+                    <i class="bi bi-list menuu-avatud"></i>
+                    <i class="bi bi-x-lg menuu-suletud"></i>
+                </label>
+            </div>
+        </div>
+
+        <!-- Avatav menüü -->
+        <nav class="menuu">
+            <ul>
+                <li><a href="#">Hommikus&ouml;&ouml;k<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Salat<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Supp<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="pastad.html">Pasta<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Praed<i class="bi bi-chevron-right"></i></a></li>
+                <li><a href="#">Magustoit<i class="bi bi-chevron-right"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- Avalehe bänner-->
+        <section class="avalehe-banner">
+            <img src="img/banner.jpg" alt="Erinevad toiduained">
+            <h1>PARIMAD RETSEPTID TUDENGILE</h1>
+        </section>
+
+        <!-- Populaarsed retseptid -->
+        <section class="populaarsed">
+            <h2>KÕIGE POPULAARSEMAD</h2>
+            <div class="retseptid">
+                <!-- Bolognese -->
+                <article class="retsepti-kaart">
+                    <img src="img/bolognese.jpg" alt="Pasta Bolognese">
+                    <h3>Pasta Bolognese</h3>
+                    <p class="kategooria">Pasta</p>
+                    <p class="retsepti-info"><strong>25 min &bull;</strong> 2.80&euro;/p</p>
+                    <a href="#" class="retsepti-nupp">Vaata retsepti</a>
+                </article>
+                <!-- Õunakook -->
+                <article class="retsepti-kaart">
+                    <img src="img/ounakook.jpg" alt="Õunakook">
+                    <h3>&Otilde;unakook</h3>
+                    <p class="kategooria">Magustoit</p>
+                    <p class="retsepti-info"><strong>55 min &bull;</strong> 1.50&euro;/p</p>
+                    <a href="#" class="retsepti-nupp">Vaata retsepti</a>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
